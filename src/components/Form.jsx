@@ -38,7 +38,7 @@ export const Form = () => {
             <h1> My Form</h1>
             <div className="form-block">
                 <div className="fill">
-                    <form action="" onClick={submitHandler}>
+                    <form action="" onSubmit={submitHandler}>
                         <input value={form.name} 
                         onInput={inputHandler}
                          type="text" 
