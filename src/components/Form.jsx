@@ -12,12 +12,12 @@ export const Form = () => {
         phone:"",
     })
     
-    const submitHandler = (e) =>{
-        e.preventDedault ();
+    const submitHandler = (e) => {
+        e.preventDefault ()
     };
      
     const clearFormHandler = (e) => {
-        e.preventDedault ();
+        e.preventDefault ();
         setForm(INIT_FROM_STATE);
         localStorage.setItem("formState", JSON.stringify(INIT_FROM_STATE))
     };
@@ -67,14 +67,14 @@ export const Form = () => {
                         name="phone">
                         </input>
                         <div style={{display:"flex", gap:"20px"}}>
-                        <button onclick={clearFormHandler} >CLEAR</button> 
+                        <button onClick={clearFormHandler} >CLEAR</button> 
                         </div>
                         <button type="submit">SUBMIT </button>
                     </form>
                 </div>
                 <div className="show">
                     <div className="Line">
-                        {Oblect.keys(form).map((formLine) => {
+                        {Object.keys(form).map((formLine) => {
                             return <div key={formLine} className="line">{form[formLine]}</div>
                         })}
                     </div>
